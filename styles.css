@@ -1,11 +1,44 @@
 body, html {
     height: 100%;
     margin: 0;
-    overflow: hidden;
     font-family: Arial, sans-serif;
-    background-color: #080000; /* Black background */
+    background-image: url('/images/background.jpg'); /* Black background */
+}
+.logo{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 25;
+    margin-left: 20px;
+    font-weight: bold;
 }
 
+.navbar-darkblue {
+    background-color: hsl(240, 96%, 21%); /* Dark blue color */
+    color: #fff; /* White text color */
+}
+.navbar-custom-height {
+    height: 55px; /* Set your desired height */
+}
+
+.search-form {
+    margin-top: 10px; /* Adjust this value to move the search box down */
+  }
+  
+
+.navbar-darkblue .navbar-nav .nav-link,
+.navbar-darkblue .navbar-brand,
+.navbar-darkblue .form-control,
+.navbar-darkblue .btn {
+    color: white; /* Set the navbar link text color to white */
+}
+
+
+.navbar-darkblue .navbar-nav .nav-link:hover,
+.navbar-darkblue .navbar-brand:hover,
+.navbar-darkblue .form-control:hover,
+.navbar-darkblue .btn:hover {
+    color: #000000;
+    background-color: white; /* Optional: Change link color on hover */
+}
 .content {
     position: absolute;
     top: 50%;
@@ -66,7 +99,7 @@ body, html {
 .modal {
     display: none;
     position: fixed;
-    z-index: 2;
+    z-index: 1000; /* Ensure modals appear above other content */
     left: 0;
     top: 0;
     width: 100%;
@@ -102,33 +135,105 @@ body, html {
 
 
 
-nav {
+
+
+footer {
     background-color: #000000;
-    overflow: hidden;
+    color:white;
+    font-weight: bold;
+    
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+  
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
 }
 
-nav ul li {
-    float: left;
+.footer-section {
+    flex: 1;
 }
 
-nav ul li a {
-    display: block;
-    color: white;
+.footer-section.left {
+    text-align: left;
+}
+
+.footer-section.center {
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
 }
 
-nav ul li a:hover {
-    background-color: #f15309;
+.footer-section.right {
+    text-align: right;
 }
 
+
+header {
+    background-color: black;
+    color: #fff;
+    padding: 10px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.header-section {
+    flex: 1;
+}
+
+.header-section.left {
+    text-align: left;
+}
+
+.header-section.center {
+    text-align: center;
+}
+
+.header-section.right {
+    text-align: right;
+}
+
+.navigation-bar{
+    background-color: #d33333;
+    padding: 0, 20px;
+   
+}
+
+
+/* Adjust dropdown display */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000; /* Ensure a high z-index to appear above other content */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-menu {
+    z-index: 1000; /* Adjust as needed */
+}
 
 @keyframes orbit1 {
     from { transform: rotate(0deg); }

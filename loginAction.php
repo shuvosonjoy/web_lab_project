@@ -12,7 +12,7 @@ if(isset($_POST['login'])){
     if(mysqli_num_rows($result)>0){
         session_start();
         $_SESSION['username'] = $l_username; //session create
-        header("Location: solar_system.html");
+        header("Location: index.php");
         exit;
 
         
