@@ -3,6 +3,7 @@ body, html {
     margin: 0;
     font-family: Arial, sans-serif;
     background-image: url('/images/background.jpg'); /* Black background */
+    scroll-behavior: smooth;
 }
 .logo{
     font-family: 'Trebuchet MS', sans-serif;
@@ -10,7 +11,36 @@ body, html {
     margin-left: 20px;
     font-weight: bold;
 }
+.page2{
 
+    color: red;
+    z-index: 100;
+    display:flex;
+    flex-direction: column;
+}
+.addPlanetButton{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 20;
+    margin-left: 20px;
+    font-weight: bold;
+    color: blue;
+
+}
+.updatePlanetButton{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 20;
+    margin-left: 20px;
+    font-weight: bold;
+    color: blue;
+}
+.deletePlanetButton{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 20;
+    margin-left: 20px;
+    font-weight: bold;
+    color: blue;
+
+}
 .navbar-darkblue {
     background-color: hsl(240, 96%, 21%); /* Dark blue color */
     color: #fff; /* White text color */
@@ -20,7 +50,7 @@ body, html {
 }
 
 .search-form {
-    margin-top: 10px; /* Adjust this value to move the search box down */
+ /* wanted to add margin */
   }
   
 
@@ -119,16 +149,17 @@ body, html {
 }
 
 .close {
-    color: #aaa;
+    color:hsl(240, 96%, 21%);
     float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+    margin-left: 90%;
 }
 
 .close:hover,
 .close:focus {
-    color: #000;
+    color: #ff0808;
     text-decoration: none;
     cursor: pointer;
 }
@@ -158,6 +189,7 @@ footer {
     justify-content: space-between;
     width: 100%;
     padding: 0 20px;
+    color: hsl(240, 100%, 40%); ;
 }
 
 .footer-section {

@@ -10,7 +10,7 @@
         die("connection Faild :".mysqli_connect_error());
     }
     else{
-        echo "<script>alert('DB connected!!!')</script>";
+        // echo "<script>alert('DB connected!!!')</script>";
     }
 
 

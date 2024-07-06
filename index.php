@@ -16,6 +16,8 @@ if ($result->num_rows > 0) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Jam Inspired</title>
@@ -33,7 +35,8 @@ if ($result->num_rows > 0) {
     <header>
    <div class="logo">SpaceY</div>
     </header>
-    <nav class="navbar navbar-expand-lg navbar-darkblue navbar-custom-height">
+
+   <nav class="navbar navbar-expand-lg navbar-darkblue navbar-custom-height">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,14 +77,18 @@ if ($result->num_rows > 0) {
 
     <div class="content">
         <button id="viewPlanetsButton">View All planets</button><br><br>
-        <button id="addPlanetButton">Add new Planets</button><br><br>
-        <button id="updatePlanetButton">Update details of planets</button><br><br>
-        <button id="deletePlanetButton">Delete Planets</button>
+        <button id="addPlanetButton" class = "addPlanetButton">Add new Planets</button><br><br>
+        <button id="updatePlanetButton" class = "updatePlanetButton">Update details of planets</button><br><br>
+        <button id="deletePlanetButton" class = "deletePlanetButton">Delete Planets</button>
     </div>
 
-    <div class="planet planet1" id="planet1"></div>
+    <div class="planet planet1" id="planet1" ></div>
     <div class="planet planet2" id="planet2"></div>
     <div class="planet planet3" id="planet3"></div>
+
+
+
+<p class="page2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolores recusandae consequuntur eum quaerat sit itaque! Quisquam dolorem ipsa consectetur distinctio doloremque mollitia optio officiis, non iste provident! Minus, aliquid? </p>
 
     <?php if(isset($_SESSION['message'])): ?>
         <div class="message"><?php echo $_SESSION['message']; unset($_SESSION['message']); ?></div>
