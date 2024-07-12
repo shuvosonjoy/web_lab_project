@@ -7,11 +7,62 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-        form{
-            background-color: #fff;
-            padding : 15px;
-            box-shadow: 0px 0px 10px 0px;
+       body {
+            background-color: black;
+            color:white;
+            font-family: Arial, sans-serif;
+        }
+        .container-fluid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        form {
+            background-color: black;
+            color:white;
+            padding: 30px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+        }
+        form h3 {
+            margin-bottom: 20px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        .form-control {
+            border-radius: 5px;
+            box-shadow: none;
+            border-color: #ced4da;
+        }
+        .form-control:focus {
+            border-color: #80bdff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+        .btn-primary {
+            background-color: white;
+            color:black;
+            font-weight: bold;
+            border-color: #007bff;
+           
+        }
+        .btn-primary:hover {
+            background-color: green;
+            border-color: #0056b3;
+        }
+       
+        a {
+            display: block;
+            color:green;
+            margin-top: 15px;
+            text-align: center;
+        
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>

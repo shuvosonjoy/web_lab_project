@@ -38,12 +38,14 @@
             color: #aaaaaa;
         }
         .btn-primary {
-            background-color: #007bff;
+            background-color: white;
             border: none;
             border-radius: 10px;
+            color:#121212;
+            font-weight: bold;
         }
         .btn-primary:hover {
-            background-color: #0056b3;
+            background-color: green;
         }
         a {
             color: #007bff;
@@ -54,6 +56,9 @@
         }
         a:hover {
             color: #0056b3;
+        }
+        .rg{
+            color:green;
         }
     </style>
 </head>
@@ -72,7 +77,7 @@
                         <input type="password" class="form-control" id="password" name="l_pass" placeholder="Enter your password">
                     </div>
                     <button type="submit" class="btn btn-primary col-12" name="login">Login</button>
-                    <a href="register.php">Register here</a>
+                    <div class="rg"><a href="register.php" style="color:white;font-weight:bold;font-family: 'Roboto', sans-serif;">Register here</a></div>
                 </form>
             </div>
         </div>

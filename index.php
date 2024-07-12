@@ -59,7 +59,7 @@ if ($result->num_rows > 0) {
 </head>
 <body>
     <header>
-   <div class="logo">SpaceY</div>
+   <div class="logo">Exoplanets</div>
     </header>
 
    <nav class="navbar navbar-expand-lg navbar-darkblue navbar-custom-height">
@@ -171,10 +171,10 @@ if ($result->num_rows > 0) {
 
     <footer>
         <div class="footer-content">
-            <div class="footer-section left">&copy; 2024 SpaceY All rights reserved.<br>
+            <div class="footer-section left">&copy; 2024 exoplanets All rights reserved.<br>
             Page Last Updated : July 5, 2024</p></div>
             <div class="footer-section center"><p>Sonjoy Sutradhar Shuvo</p></div>
-            <div class="footer-section right"><p>Sonjoy Sutradhar Shuvo</p></div>
+            <div class="footer-section right"><p>Web Technology Lab Final</p></div>
         </div>
     </footer>
 
