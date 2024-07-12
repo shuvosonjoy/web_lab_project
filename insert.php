@@ -31,11 +31,7 @@
         echo "<script>alert('Pass and con-pass is not matching!!')</script>";
         echo "<script>location.href='register.php'</script>";
     }
-   
-    // else if(mysqli_num_rows($duplicate_email)>0){
-    //     echo "<script>alert('email already taken!!')</script>";
-    //     echo "<script>location.href='register.php'</script>";
-    // }
+
     else{
         if(!mysqli_query($conn,$insert_query)){
             die("not inserted!!");

@@ -7,27 +7,53 @@ $sql = "SELECT * FROM planets";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        $planets[] = $row;
-    }
+  
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<style>
+  .viewplanets button{
+    background-color: darkblue;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 20;
+    margin-left: 20px;
+    font-weight: bold;
+    color: white;
+  }
+  .addPlanetButton button{
+    background-color: darkblue;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 20;
+    font-weight: bold;
+    color: white;
+  }
+  .deletePlanetButton button{
+    background-color: darkblue;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 20;
+    font-weight: bold;
+    color: white;
+  }
+  .updatePlanetButton button{
+    background-color: darkblue;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 20;
+    font-weight: bold;
+    color: white;
+  }
+</style>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Jam Inspired</title>
-    <!-- Bootstrap CSS link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
 
-    <!-- Your custom styles -->
+
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Bootstrap Bundle JS (includes Popper.js) and jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -45,25 +71,23 @@ if ($result->num_rows > 0) {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="image_index.php">Mission</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            More
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="createslider.php">Next Mission</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
+       
       </ul>
   
      <form class="d-flex search-form">
@@ -76,11 +100,16 @@ if ($result->num_rows > 0) {
 </nav>
 
     <div class="content">
-        <button id="viewPlanetsButton">View All planets</button><br><br>
-        <button id="addPlanetButton" class = "addPlanetButton">Add new Planets</button><br><br>
-        <button id="updatePlanetButton" class = "updatePlanetButton">Update details of planets</button><br><br>
-        <button id="deletePlanetButton" class = "deletePlanetButton">Delete Planets</button>
+       <a href="viewplanets.php" class="viewplanets"><button class="btn btn-primary" >View All planets</button></a> <br><br>
+       
+      <div class="addPlanetButton"> <button id="addPlanetButton" class="btn btn-primary">Add new Planets</button><br><br></div>
+       
+      <div class="updatePlanetButton"> <button id="updatePlanetButton" class="btn btn-primary">Update details of planets</button><br><br></div>
+
+      <div class="deletePlanetButton"> <button id="deletePlanetButton" class="btn btn-primary">Delete Planet Info</button><br><br></div>
     </div>
+
+    
 
     <div class="planet planet1" id="planet1" ></div>
     <div class="planet planet2" id="planet2"></div>
@@ -88,13 +117,13 @@ if ($result->num_rows > 0) {
 
 
 
-<p class="page2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolores recusandae consequuntur eum quaerat sit itaque! Quisquam dolorem ipsa consectetur distinctio doloremque mollitia optio officiis, non iste provident! Minus, aliquid? </p>
+
 
     <?php if(isset($_SESSION['message'])): ?>
         <div class="message"><?php echo $_SESSION['message']; unset($_SESSION['message']); ?></div>
     <?php endif; ?>
 
-    <!-- Modal for Adding Planet -->
+   
     <div class="modal" id="addModal">
         <div class="modal-content">
             <span class="close" id="closeAddModal">&times;</span>
@@ -109,7 +138,7 @@ if ($result->num_rows > 0) {
         </div>
     </div>
 
-    <!-- Modal for Updating Planet -->
+
     <div class="modal" id="updateModal">
         <div class="modal-content">
             <span class="close" id="closeUpdateModal">&times;</span>
@@ -126,24 +155,20 @@ if ($result->num_rows > 0) {
         </div>
     </div>
 
-    <!-- Modal for Confirming Delete -->
+ 
     <div class="modal" id="deleteModal">
         <div class="modal-content">
             <span class="close" id="closeDeleteModal">&times;</span>
             <h2>Delete Planet</h2>
             <form id="deleteForm" action="deleteplanet.php" method="POST">
-                <label for="deletePlanetSelect">Select Planet:</label><br>
-                <select id="deletePlanetSelect" name="deletePlanetSelect">
-                    <?php foreach($planets as $planet): ?>
-                        <option value="<?php echo $planet['id']; ?>"><?php echo $planet['name']; ?></option>
-                    <?php endforeach; ?>
-                </select><br><br>
+                <label for="deletePlanetSelect">Enter Planet Name you wanted to delete:</label><br>
+                <input type="text" id="deletePlanetSelect" name="deletePlanetSelect"><br><br>
                 <button type="submit">Delete Planet</button>
             </form>
         </div>
     </div>
 
-    <!-- Footer -->
+
     <footer>
         <div class="footer-content">
             <div class="footer-section left">&copy; 2024 SpaceY All rights reserved.<br>

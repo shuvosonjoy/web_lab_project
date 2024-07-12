@@ -2,7 +2,7 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url('/images/background.jpg'); /* Black background */
+    background-image: url('/images/background.jpg'); 
     scroll-behavior: smooth;
 }
 .logo{
@@ -42,15 +42,15 @@ body, html {
 
 }
 .navbar-darkblue {
-    background-color: hsl(240, 96%, 21%); /* Dark blue color */
-    color: #fff; /* White text color */
+    background-color: hsl(240, 96%, 21%); 
+    color: #fff; 
 }
 .navbar-custom-height {
-    height: 55px; /* Set your desired height */
+    height: 55px; 
 }
 
 .search-form {
- /* wanted to add margin */
+
   }
   
 
@@ -58,7 +58,7 @@ body, html {
 .navbar-darkblue .navbar-brand,
 .navbar-darkblue .form-control,
 .navbar-darkblue .btn {
-    color: white; /* Set the navbar link text color to white */
+    color: white;
 }
 
 
@@ -67,7 +67,8 @@ body, html {
 .navbar-darkblue .form-control:hover,
 .navbar-darkblue .btn:hover {
     color: #000000;
-    background-color: white; /* Optional: Change link color on hover */
+    background-color: white;
+
 }
 .content {
     position: absolute;
@@ -82,7 +83,7 @@ body, html {
     position: absolute;
     font-family: 'Orbitron', sans-serif;
     font-size: 35px;
-  fornt-weight: bold;
+    font-weight: bold;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -105,16 +106,18 @@ body, html {
     left: 10%;
     
  background-image: url('/images/earth.png');
-    /* Example: background-image: url('images/planet1.png'); */
+
     animation: orbit1 7s linear infinite;
 }
 
 .planet2 {
     top: 50%;
     left: 50%;
+    height: 190px;
+    width: 190px;
     background-image: url('/images/jupiter.png');
-    /* Example: background-image: url('images/planet2.png'); */
-    animation: orbit2 15s linear infinite;
+
+    animation: orbit2 7s linear infinite;
     z-index: 0;
     
 }
@@ -129,7 +132,7 @@ body, html {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000; /* Ensure modals appear above other content */
+    z-index: 1000; 
     left: 0;
     top: 0;
     width: 100%;
@@ -139,17 +142,17 @@ body, html {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: #05035e;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 2px solid #ffffff;
     width: 60%;
     text-align: center;
-    color: #000;
+    color: hwb(0 100% 0%);
 }
 
 .close {
-    color:hsl(240, 96%, 21%);
+    color:hsl(0, 0%, 100%);
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -250,26 +253,26 @@ header {
 }
 
 
-/* Adjust dropdown display */
+
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1000; /* Ensure a high z-index to appear above other content */
+    z-index: 1000; 
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 .dropdown-menu {
-    z-index: 1000; /* Adjust as needed */
+    z-index: 1000; 
 }
 
 @keyframes orbit1 {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
 }
 
 @keyframes orbit2 {

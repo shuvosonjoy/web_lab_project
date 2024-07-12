@@ -7,11 +7,11 @@ if(isset($_POST['login'])){
     echo("password: $l_pass");
 
     $result = mysqli_query($conn,"SELECT * FROM `authentication` WHERE username='$l_username' And Password='$l_pass'");
-    //echo("result: $result");
+
 
     if(mysqli_num_rows($result)>0){
         session_start();
-        $_SESSION['username'] = $l_username; //session create
+        $_SESSION['username'] = $l_username; 
         header("Location: index.php");
         exit;
 
